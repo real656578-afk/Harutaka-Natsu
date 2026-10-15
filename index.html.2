@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Harutaka Natsu</title>
+
+    <style>
+        body{
+            background-image: url("backgrond.jpg");
+            background-repeat: repeat;
+            font-family: "Times New Roman", serif;
+            margin: 40px;
+        }
+
+        .header{
+            animation: fadeIn 2s;
+            text-align: center;
+        }
+
+footer{
+    text-align: center;
+    margin-top: 50px;
+    color: gray;
+    padding: 20px;
+}
+
+        #sakura-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.sakura{
+    position: absolute;
+    font-size: 20px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall{
+
+    0%{
+        transform: translate(0px,-50px) rotate(0deg);
+        opacity:1;
+    }
+
+    50%{
+        transform: translate(80px,50vh) rotate(180deg);
+    }
+
+    100%{
+        transform: translate(-80px,110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+.star{
+    position: fixed;
+    color: white;
+    pointer-events: none;
+    animation: twinkle 2s infinite;
+}
+
+@keyframes twinkle{
+
+    0%,100%{
+        opacity: 0.3;
+    }
+
+    50%{
+        opacity: 1;
+    }
+}
+
+    0%{
+        transform: translateY(-50px);
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+
+        @keyframes fadeIn{
+            from{
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+        h1{
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.2);
+            text-shadow:
+            0 0 10px white,
+            0 0 20px pink,
+            0 0 30px violet;
+}
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        .profile{
+            width:150px;
+            height:150px;
+            border-radius:50%;
+            object-fit: cover;
+        }
+
+       .card{
+            background: white;
+
+            padding: 20px;
+            margin-bottom: 30px;
+
+            border: 3px solid #305cba;
+            border-radius: 20px;
+
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+
+        .card:hover{
+            transform: translateY(-10px);
+            box-shadow:
+            0 0 40px rgba(123,104,238,1),
+            0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        nav{
+            margin-top: 20px;
+        }
+
+        nav a{
+            margin: 0 15px;
+            text-decoration: none;
+            color: #305cba;
+            font-weight: bold;
+        }
+
+        nav a:hover{
+            color: #7b68ee;
+            text-decoration: underline;
+        }
+
+        img{
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        img:hover{
+            transform: scale(1.05);
+        }
+
+        .profile{
+            width:150px;
+            border-radius:50%;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="sakura-container"></div>
+<div id="star-container"></div>
+
+<div class="card">
+
+    <div class="header">
+
+        <h1>Welcome to Harutaka Natsu World</h1>
+
+        <p>🌸 Anime • Music • Games • Coding 🌸</p>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#favorite">favorites</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </div>
+
+</div>
+
+    <br><br>
+
+    <div class="card" id="about">
+        <h2>ヨルシカについて</h2>
+        <p>
+            私のお気に入りのバンド
+        </p>
+    </div>
+
+    <div class="card"
+
+<div style="overflow:auto;">
+    <img src="Yorushika_Logo.jpg" 
+        width="500" 
+        style="float:right;">
+
+    <h2>ヨルシカについて</h2>
+
+    <p>
+         ヨルシカは、僕が初めて心から好きになった日本の音楽です。
+     どの曲にも感情や思い出、そして自分自身の姿が映っている気がします。
+   だから僕は、ヨルシカのすべての曲が大好きです。
+    </p>
+</div>
+
+    <br><br>
+
+    <div class="card" id="favorite">
+        <h2>私のお気に入りのアニメキャラクター</h2>
+        <p>
+            Rikka Takanashi , Yuki Osanai
+        </p>
+    </div>
+
+    <div class="card"
+
+<div style="display:flex; align-items:flex-start;gap:20px;">
+    <img src="anime-gif-2.gif" width="300"
+
+    </div>
+
+        <h2>Rikka takanashi</h2>
+
+        <p>
+            小鳥遊六花は、私を本当の意味でアニメの世界へ連れて行ってくれた特別な存在です。もしかしたら、『中二病でも恋がしたい！』は私が初めて最後まで見たアニメであり、本格的にアニメを好きになるきっかけになった作品かもしれません。
+
+        六花の少し変わったところや、想像力豊かな世界、そして時々見せる寂しさや優しさに、私は何度も心を動かされました。見れば見るほど彼女の魅力に引き込まれ、今でも飽きることなく何度でも見返したくなる大切な作品です。
+
+    私にとって小鳥遊六花は、ただのアニメキャラクターではありません。アニメという素晴らしい世界への扉を開いてくれた、かけがえのない存在です。
+        </p>
+    </div>
+
+</div>
+
+    <br><br>
+
+    <div class="card" id="contact">
+
+    <div class="card"
+
+<div style="overflow:auto;">
+     <img src="osanai.jpg" width="500"
+        width="500"
+        style="float:right;">
+
+    <h2>Yuki Osanai</h2>
+
+    <p>
+        小佐内ゆきは、私が『小市民シリーズ』を通して出会った、
+    最も好きな女性キャラクターの一人です。
+
+    彼女もまた、「普通の人でありたい」と願っている人物です。
+    しかし実際には、観察力や洞察力が非常に鋭く、
+    周囲の出来事を誰よりも深く理解している、
+    まるで天才のような一面を持っています。
+
+    落ち着いた話し方、何気ない仕草、
+    そして時々見せる少し不思議で掴みどころのない表情。
+    そのすべてが私にはとても魅力的に映ります。
+
+    小佐内ゆきは決して派手なキャラクターではありません。
+    それでも彼女の静かな存在感や、
+    「普通でありたい」という願いの裏に隠された特別さに、
+    私は何度も心を惹かれました。
+
+    だから私にとって小佐内ゆきは、
+    ただ好きなキャラクターというだけではなく、
+    何気ない日常の中にも特別な輝きがあることを
+    教えてくれた、大切な存在です.
+
+        </p>
+    </div>
+</div>
+
+    <div class="card" id="contact">
+        <h2>Contact</h2>
+
+        <p>Discord : Natsu</p>
+        <p>Youtube : @HarutakaNatsu</p>
+        <p>Twitter : @HarutakaNatsu</p>
+        <p>Twitch : harutaka_natsu</p>
+        <p>Email : ttonpai253@gmail.com</p>
+    </div>
+
+    <div id="sakura-container"></div>
+    <div id="star-container"></div>
+
+    <script>
+
+const container = document.getElementById("sakura-container");
+
+for(let i = 0; i < 30; i++){
+
+    const sakura = document.createElement("div");
+    sakura.classList.add("sakura");
+
+    sakura.innerHTML = "🌸";
+
+    sakura.style.left = Math.random() * 100 + "vw";
+
+    sakura.style.animationDuration =
+        (Math.random() * 5 + 5) + "s";
+
+    sakura.style.animationDelay =
+        Math.random() * 5 + "s";
+
+    container.appendChild(sakura);
+}
+
+    </script>
+
+<script>
+
+const stars =
+document.getElementById("star-container");
+
+for(let i = 0; i < 50; i++){
+
+    const star =
+    document.createElement("div");
+
+    star.className = "star";
+
+    star.innerHTML = "✦";
+
+    star.style.left =
+        Math.random() * 100 + "vw";
+
+    star.style.top =
+        Math.random() * 100 + "vh";
+
+    star.style.fontSize =
+        Math.random() * 15 + 10 + "px";
+
+    star.style.animationDelay =
+        Math.random() * 2 + "s";
+
+    stars.appendChild(star);
+}
+
+</script>
+
+<footer>
+    <p>© 2026 Harutaka Natsu</p>
+    <p>Made with HTML & CSS 🌸</p>
+</footer>
+
+</body>
+</html>
