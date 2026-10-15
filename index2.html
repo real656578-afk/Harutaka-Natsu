@@ -1,0 +1,1037 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b0a0e">
+
+    <title>Harutaka Natsu — Fragments of a Silent Mind</title>
+
+    <style>
+        /* =========================================
+           01. THE WORLD
+        ========================================= */
+
+        :root {
+            --bg: #0b0a0e;
+            --paper: rgba(20, 18, 24, 0.92);
+            --paper-light: rgba(29, 25, 32, 0.91);
+            --text: #c5bdc8;
+            --muted: #77707e;
+            --purple: #9b849e;
+            --red: #754650;
+            --border: rgba(157, 137, 157, 0.22);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scrollbar-color: #39303d #0b0a0e;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+
+            background-color: var(--bg);
+            background-image:
+                linear-gradient(
+                    rgba(8, 7, 11, 0.89),
+                    rgba(10, 8, 13, 0.94)
+                ),
+                url("pexels-photo-3290613");
+
+            background-repeat: repeat;
+            background-attachment: fixed;
+            background-size: auto, 420px;
+
+            color: var(--text);
+            font-family: "Times New Roman", serif;
+            line-height: 1.9;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: 50;
+            pointer-events: none;
+
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent 0px,
+                transparent 3px,
+                rgba(0, 0, 0, 0.12) 4px
+            );
+
+            opacity: 0.28;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: 49;
+            pointer-events: none;
+
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    transparent 25%,
+                    rgba(0, 0, 0, 0.55) 100%
+                );
+        }
+
+        a {
+            color: inherit;
+        }
+
+        ::selection {
+            background: #614451;
+            color: #f0e5ed;
+        }
+
+        /* =========================================
+           02. HEADER — SOMETHING IS WRONG
+        ========================================= */
+
+        .header {
+            position: relative;
+            width: min(1050px, 90%);
+            margin: 0 auto;
+            padding: 100px 0 55px;
+            text-align: left;
+            animation: appear 2.5s ease both;
+        }
+
+        .header::before {
+            content: "PERSONAL RECORD / UNKNOWN";
+            display: block;
+            margin-bottom: 32px;
+            color: #66505e;
+            font-size: 10px;
+            letter-spacing: 5px;
+            transform: translateX(18px) rotate(-2deg);
+        }
+
+        .header h1 {
+            position: relative;
+            width: fit-content;
+            max-width: 100%;
+            margin: 0 0 4px;
+            color: #d2c6d4;
+            font-size: clamp(34px, 6vw, 68px);
+            font-weight: normal;
+            letter-spacing: 1px;
+            line-height: 1.25;
+
+            text-shadow:
+                2px 0 rgba(112, 60, 78, 0.3),
+                -2px 0 rgba(89, 78, 126, 0.2);
+        }
+
+        .header h1::after {
+            content: "Harutaka Natsu";
+            position: absolute;
+            top: 2px;
+            left: 3px;
+            z-index: -1;
+            color: #744a5b;
+            opacity: 0.4;
+            clip-path: inset(55% 0 15% 0);
+        }
+
+        .header h2 {
+            margin: 15px 0 0 42px;
+            color: #777080;
+            font-size: clamp(14px, 2.3vw, 19px);
+            font-weight: normal;
+            letter-spacing: 3px;
+        }
+
+        .header .subtitle {
+            margin-top: 38px;
+            margin-left: 12%;
+            color: #8b7f8c;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .header .subtitle span {
+            display: block;
+            margin-top: 8px;
+            color: #60404a;
+            font-size: 11px;
+            letter-spacing: 4px;
+        }
+
+        .header .warning {
+            position: absolute;
+            right: 2%;
+            bottom: 28px;
+            color: #60404a;
+            font-size: 10px;
+            letter-spacing: 3px;
+            transform: rotate(5deg);
+        }
+
+        /* =========================================
+           03. NAVIGATION
+        ========================================= */
+
+        nav {
+            position: relative;
+            z-index: 5;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 30px;
+            width: min(1000px, 88%);
+            margin: 15px auto 0;
+            padding: 18px 10px;
+
+            border-top: 1px solid rgba(157, 137, 157, 0.12);
+            border-bottom: 1px solid rgba(157, 137, 157, 0.12);
+        }
+
+        nav a {
+            color: #918398;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-decoration: none;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        nav a:hover {
+            color: #d2b6ce;
+            text-shadow: 0 0 12px rgba(155, 105, 145, 0.4);
+        }
+
+        /* =========================================
+           04. INTRODUCTION — NOT QUITE CENTERED
+        ========================================= */
+
+        .intro {
+            position: relative;
+            width: min(920px, 88%);
+            margin: 75px auto 20px;
+            padding: 20px 8% 25px 13%;
+            transform: rotate(-1deg);
+        }
+
+        .intro::before {
+            content: "FRAGMENT 00";
+            position: absolute;
+            top: -15px;
+            left: 3%;
+            color: #654c60;
+            font-size: 10px;
+            letter-spacing: 4px;
+        }
+
+        .intro h2 {
+            margin: 0 0 10px;
+            color: #b9a6bd;
+            font-size: 24px;
+            font-weight: normal;
+        }
+
+        .intro p {
+            max-width: 570px;
+            color: #948a98;
+            font-size: 15px;
+        }
+
+        .intro .japanese {
+            margin-top: 20px;
+            color: #665a6c;
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+
+        /* =========================================
+           05. SCATTERED THOUGHTS
+        ========================================= */
+
+        .scatter-area {
+            position: relative;
+            isolation: isolate;
+            width: min(1100px, 94%);
+            min-height: 1240px;
+            margin: 35px auto 110px;
+        }
+
+        .fragment {
+            position: absolute;
+            padding: 22px 25px 27px;
+            overflow-wrap: anywhere;
+
+            background:
+                linear-gradient(
+                    140deg,
+                    rgba(30, 26, 34, 0.95),
+                    rgba(15, 14, 19, 0.96)
+                );
+
+            border: 1px solid var(--border);
+            color: var(--text);
+
+            box-shadow:
+                0 15px 45px rgba(0, 0, 0, 0.45),
+                inset 0 0 25px rgba(123, 93, 123, 0.025);
+
+            transition:
+                border-color 0.35s,
+                background 0.35s,
+                box-shadow 0.35s;
+
+            animation: fragmentAppear 1.6s ease both;
+        }
+
+        .fragment::after {
+            content: "";
+            position: absolute;
+            right: 10px;
+            bottom: 8px;
+            width: 16px;
+            height: 1px;
+            background: rgba(154, 119, 147, 0.28);
+        }
+
+        .fragment small {
+            display: block;
+            margin-bottom: 12px;
+            color: #796276;
+            font-size: 10px;
+            letter-spacing: 3px;
+        }
+
+        .fragment h3 {
+            margin: 0 0 12px;
+            color: #c0aec4;
+            font-size: 20px;
+            font-weight: normal;
+        }
+
+        .fragment p {
+            margin: 0;
+            color: #b3aab7;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .fragment .afterthought {
+            margin-top: 18px;
+            color: #76515f;
+            font-size: 12px;
+            font-style: italic;
+        }
+
+        /* Different positions and sizes on purpose */
+
+        .fragment:nth-child(1) {
+            top: 20px;
+            left: 3%;
+            z-index: 2;
+            width: 43%;
+            transform: rotate(-3.5deg);
+            animation-delay: 0.1s;
+        }
+
+        .fragment:nth-child(2) {
+            top: 150px;
+            right: 2%;
+            z-index: 3;
+            width: 36%;
+            transform: rotate(4.5deg);
+            border-color: rgba(117, 70, 80, 0.42);
+            animation-delay: 0.3s;
+        }
+
+        .fragment:nth-child(3) {
+            top: 335px;
+            left: 15%;
+            z-index: 4;
+            width: 33%;
+            transform: rotate(1.5deg);
+            animation-delay: 0.5s;
+        }
+
+        .fragment:nth-child(4) {
+            top: 395px;
+            right: 4%;
+            z-index: 1;
+            width: 41%;
+            transform: rotate(-2.5deg);
+            animation-delay: 0.4s;
+        }
+
+        .fragment:nth-child(5) {
+            top: 610px;
+            left: 1%;
+            z-index: 5;
+            width: 48%;
+            transform: rotate(2.8deg);
+            animation-delay: 0.7s;
+        }
+
+        .fragment:nth-child(6) {
+            top: 755px;
+            right: 8%;
+            z-index: 2;
+            width: 38%;
+            transform: rotate(-4deg);
+            animation-delay: 0.6s;
+        }
+
+        .fragment:nth-child(7) {
+            top: 940px;
+            left: 25%;
+            z-index: 6;
+            width: 45%;
+            transform: rotate(1deg);
+            animation-delay: 0.9s;
+        }
+
+        .fragment:nth-child(8) {
+            top: 1040px;
+            right: 0;
+            z-index: 3;
+            width: 30%;
+            transform: rotate(3.5deg);
+            animation-delay: 1s;
+        }
+
+        /* Hovering should feel subtly wrong, not playful */
+
+        .fragment:hover {
+            z-index: 15;
+            border-color: rgba(155, 112, 145, 0.5);
+            background: rgba(27, 22, 31, 0.98);
+
+            box-shadow:
+                0 15px 55px rgba(0, 0, 0, 0.65),
+                0 0 25px rgba(100, 58, 85, 0.08);
+        }
+
+        .fragment:nth-child(2):hover,
+        .fragment:nth-child(6):hover {
+            border-color: rgba(135, 72, 84, 0.7);
+        }
+
+        /* One fragment looks like a damaged record */
+
+        .fragment.damaged {
+            border-left: 2px solid #69434f;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(50, 30, 38, 0.42),
+                    rgba(18, 16, 22, 0.96) 28%
+                );
+        }
+
+        .fragment.damaged small {
+            color: #956270;
+        }
+
+        .fragment.damaged .redacted {
+            color: #5b454e;
+            letter-spacing: 4px;
+            user-select: none;
+        }
+
+        /* =========================================
+           06. A MESSAGE THAT SHOULD NOT BE HERE
+        ========================================= */
+
+        .unlisted {
+            position: relative;
+            width: min(760px, 80%);
+            margin: 10px 4% 100px auto;
+            padding: 28px 32px;
+
+            border-top: 1px solid rgba(117, 70, 80, 0.3);
+            border-bottom: 1px solid rgba(117, 70, 80, 0.2);
+
+            transform: rotate(-1.8deg);
+        }
+
+        .unlisted small {
+            color: #77505d;
+            font-size: 10px;
+            letter-spacing: 4px;
+        }
+
+        .unlisted p {
+            color: #958593;
+            font-size: 16px;
+        }
+
+        .unlisted .last-line {
+            margin-top: 28px;
+            margin-left: 22%;
+            color: #6b4652;
+            font-size: 13px;
+        }
+
+        /* =========================================
+           07. CONTACT — END OF RECORD
+        ========================================= */
+
+        .contact {
+            position: relative;
+            width: min(740px, 84%);
+            margin: 100px auto 90px 8%;
+            padding: 30px 35px;
+
+            background: rgba(15, 13, 18, 0.72);
+            border: 1px solid rgba(157, 137, 157, 0.16);
+
+            transform: rotate(1.2deg);
+        }
+
+        .contact::before {
+            content: "RECORD STATUS: INCOMPLETE";
+            position: absolute;
+            top: -22px;
+            right: 5px;
+            color: #76515d;
+            font-size: 10px;
+            letter-spacing: 3px;
+            transform: rotate(-2deg);
+        }
+
+        .contact h2 {
+            margin: 0 0 22px;
+            color: #b6a2bc;
+            font-size: 25px;
+            font-weight: normal;
+        }
+
+        .contact p {
+            margin: 10px 0;
+            color: #918795;
+            font-size: 14px;
+        }
+
+        .contact a {
+            color: #b29db5;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .contact a:hover {
+            color: #e0c7dc;
+        }
+
+        .contact .small-note {
+            margin-top: 32px;
+            color: #624955;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        /* =========================================
+           08. SAKURA AND STARS
+        ========================================= */
+
+        #sakura-container,
+        #star-container {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        #sakura-container {
+            z-index: 20;
+        }
+
+        #star-container {
+            z-index: 19;
+        }
+
+        .sakura {
+            position: absolute;
+            top: -40px;
+            opacity: 0.24;
+            filter: grayscale(0.45);
+            animation: fall linear infinite;
+        }
+
+        .star {
+            position: absolute;
+            color: #a99ab4;
+            opacity: 0.22;
+            animation: twinkle 4s ease-in-out infinite;
+        }
+
+        /* =========================================
+           09. FOOTER
+        ========================================= */
+
+        footer {
+            position: relative;
+            padding: 30px 15px 55px;
+            text-align: center;
+            color: #5e5664;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            color: inherit;
+        }
+
+        footer .end {
+            margin-top: 25px;
+            color: #674451;
+            letter-spacing: 4px;
+        }
+
+        /* =========================================
+           10. ANIMATIONS
+        ========================================= */
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(-12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fragmentAppear {
+            from {
+                opacity: 0;
+                filter: blur(3px);
+            }
+            to {
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translate(0, -50px) rotate(0deg);
+                opacity: 0;
+            }
+            15% {
+                opacity: 0.25;
+            }
+            100% {
+                transform: translate(-65px, 110vh) rotate(320deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.1;
+            }
+            50% {
+                opacity: 0.32;
+            }
+        }
+
+        /* =========================================
+           11. MOBILE
+        ========================================= */
+
+        @media (max-width: 600px) {
+            body {
+                background-attachment: scroll;
+            }
+
+            .header {
+                width: 88%;
+                padding-top: 65px;
+                padding-bottom: 45px;
+            }
+
+            .header::before {
+                font-size: 8px;
+                letter-spacing: 3px;
+            }
+
+            .header h2 {
+                margin-left: 8px;
+                letter-spacing: 1px;
+            }
+
+            .header .subtitle {
+                margin-left: 4%;
+                font-size: 12px;
+            }
+
+            .header .warning {
+                right: 0;
+                bottom: 4px;
+                font-size: 8px;
+            }
+
+            nav {
+                width: 88%;
+                gap: 24px;
+            }
+
+            .intro {
+                width: 88%;
+                margin-top: 55px;
+                padding-left: 6%;
+                padding-right: 3%;
+            }
+
+            .intro h2 {
+                font-size: 21px;
+            }
+
+            .scatter-area {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 32px;
+                width: 100%;
+                min-height: 0;
+                margin: 45px auto 70px;
+                padding: 0 5%;
+            }
+
+            .fragment,
+            .fragment:nth-child(n) {
+                position: relative;
+                top: auto;
+                right: auto;
+                bottom: auto;
+                left: auto;
+                width: 88%;
+                max-width: 100%;
+                margin: 0;
+            }
+
+            .fragment:nth-child(2n) {
+                align-self: flex-end;
+            }
+
+            .fragment:nth-child(3n) {
+                align-self: center;
+            }
+
+            .fragment:nth-child(4) {
+                margin-top: -10px;
+                margin-right: 2%;
+            }
+
+            .fragment:nth-child(7) {
+                width: 94%;
+                margin-left: 2%;
+            }
+
+            .fragment h3 {
+                font-size: 18px;
+            }
+
+            .fragment p {
+                font-size: 13px;
+            }
+
+            .unlisted {
+                width: 88%;
+                margin: 30px 3% 75px auto;
+                padding: 22px;
+            }
+
+            .unlisted .last-line {
+                margin-left: 8%;
+            }
+
+            .contact {
+                width: 86%;
+                margin: 90px auto 70px 5%;
+                padding: 24px;
+            }
+
+            footer {
+                padding-bottom: 35px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Harutaka Natsu</h1>
+
+        <div class="warning">
+            NO RECORD FOUND
+        </div>
+    </header>
+
+    <nav>
+        <a href="#thoughts">THOUGHTS</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+
+    <section class="intro">
+        <h2>Fragments of a Silent Mind</h2>
+
+        <p>
+            Some thoughts are better left unspoken.
+            Some memories should have disappeared a long time ago.
+        </p>
+
+        <p class="japanese">
+            ここに来たことがありますか。
+        </p>
+    </section>
+
+    <main id="thoughts" class="scatter-area">
+
+        <article class="fragment">
+            <small>Sometimes, we just want to be alone.</small>
+            <h3>หน้ากาก</h3>
+            <p>
+                บางทีเราก็แค่อยากอยู่คนเดียวอย่างสงบ แต่เราก็ไม่สามารถทำได้
+                เพราะเราต้องสวมหน้ากากอยู่ตลอดเวลา เพราะตัวตนที่เราแสดงออกไปตั้งแต่วันนั้น
+                ถึงตอนนั้นจะยังเด็กมากอยู่ แต่ในเมื่อทุกคนจำเราได้รูปแบบนั้นไปแล้ว 
+                เราก็ต้องทำตัวให้เหมือนเดิมต่อไป
+                ถึงแม้นั่นอาจจะไม่ใช่ตัวตนที่แท้จริงของเราก็ตาม
+            </p>
+            <p class="afterthought">
+                หรือบางที เราอาจไม่เคยอนุญาตให้ใครเข้าใจเลยก็ได้
+            </p>
+        </article>
+
+        <article class="fragment damaged">
+            <small>Replicant</small>
+            <h3>ความรัก</h3>
+            <p>
+                มนุษย์อย่างพวกเราทุกคนล้วนเป็นของปลอมทั้งนั้น แต่ ถ้าเป็นอย่างนั้น
+                แล้วอะไรล่ะที่เป็นของเราอย่างแท้จริงบ้าง เราอาจจะไม่เคยมีตัวตนที่แท้จริงเลยก็ได้
+                ใช่แล้ว นี่อาจจะเป็นความฝันก็ได้ เราอาจจะเป็นเพียงแค่สิ่งที่ถูกสร้างขึ้นมาก็ได้
+                ไม่ว่าจะเป็น ค่านิยม ความคิด ความทรงจำ หรือแม้แต่ความรัก ต่างก็ล้วนเป็นของปลอมทั้งนั้น
+                ความรักไม่มีอยู่จริงบนโลกหรอก ทุกอย่างล้วนเป็นของปลอม ใช่แล้ว มันคือของปลอม ใช่แล้ว...
+            </p>
+            <p class="afterthought">
+                ทุกอย่างล้วนเป็นสิ่งที่ทุกคนสร้างขึ้นมาเพื่อหลอกตัวเองทั้งนั้น บนโลกที่แสนจะโหดร้ายนี้
+            </p>
+        </article>
+
+        <article class="fragment">
+            <small>Life</small>
+            <h3>ทำไม...</h3>
+            <p>
+                ทั้งที่เรารู้ว่าโลกนี้โหดร้าย แต่ทำไมเราก็ยังคงอยู่ต่อไป
+                ทั้งที่เรารู้ว่าความรักไม่มีอยู่จริง แต่ทำไมเราก็ยังคงเชื่อมันอยู่
+                ทั้งที่เรารู้ว่าความทรงจำเป็นสิ่งที่หลอกลวง แต่ทำไมเราก็ยังคงยึดติดมันอยู่
+                ทำไมคนไม่ดีบางคนถึงได้ประโยชน์ 
+                ทำไมความสุขถึงต้องผูกติดอยู่แต่กับเงินทอง 
+                "มันเป็นเพราะอะไรกันนะ" คำถามพวกนี้วนอยู่ในหัวผมซำ้ไปซำ้มา
+                แค่มีชีวิตอยู่ก็เจ็บปวดแล้ว 
+                ทั้งที่ผมที่อยากมีชีวิตที่สงบสุข มันยากขนาดนั้นเลยหรอ
+                คำถามพวกนี้ไม่มีใครตอบได้หรอก เพราะมันไม่มีคำตอบอยู่แล้ว
+                ไม่มีใครหาวิธีเติมเต็มช่องว่างในหัวใจนี้ได้เลย...
+            </p>
+        </article>
+
+        <article class="fragment">
+            <small>Selfishness</small>
+            <h3>มนุษย์ทุกคนก็ล้วนเห็นแก่ตัวกันหมดนั่นแหละ</h3>
+            <p>
+                เราทุกคนล้วนมีความเห็นแก่ตัวกันทั้งนั้นนั่นแหละ  ไม่ว่าจะเป็นเรื่องอะไรก็ตาม 
+                ทั้งความรัก ความสุข หรือแม้แต่ความใจดี บางทีสิ่งเหล่านี้อาจเป็นเพียงสิ่งที่เราทำเพื่อผลประโยชน์ของตัวเอง 
+                โดยหวังว่าจะได้รับบางสิ่งกลับคืนมา ไม่ว่าจะเป็นความสุข ความรัก หรือการยอมรับจากใครสักคน
+                บางครั้งผมก็ลองมองย้อนกลับมาที่ตัวเองซำ้แล้วซำ้เล่า คิดแล้วคิดอีก 
+                เราช่วยเหลือผู้อื่นเพราะอยากให้พวกเขามีความสุขจริงๆ หรือเพียงเพราะการได้เห็นคนอื่นมีความสุขทำให้เรารู้สึกดีกับตัวเอง 
+                เรามอบความรักให้ใครสักคนเพราะต้องการให้เขามีความสุข หรือเพราะเราต้องการให้เขาอยู่ข้างๆ เรา 
+                เราเสียสละบางสิ่งเพื่อคนอื่นเพราะเราเป็นคนดีจริงๆ หรือเพียงต้องการให้ใครสักคนมองเห็นคุณค่าของเรา
+                ถ้าการทำความดีทำให้เรามีความสุข แล้วความดีนั้นยังเรียกว่าความดีได้อยู่หรือเปล่า
+                สุดท้ายแล้ว ความเมตตาอาจเป็นเพียงความเห็นแก่ตัวในรูปแบบที่สังคมยอมรับก็ได้
+            </p>
+            <p class="afterthought">
+                แต่ถ้าเป็นอย่างนั้นจริง ๆ แล้วบนโลกใบนี้ยังมีใครที่ทำบางสิ่งเพื่อคนอื่น โดยไม่ได้หวังอะไรกลับคืนมาเลยหรือเปล่า...
+            </p>
+        </article>
+
+        <article class="fragment damaged">
+            <small>Success</small>
+            <h3>ความสำเร็จ</h3>
+            <p>
+                โลกใบนี้ช่างน่าขันเสียจริง ทุกคนบอกว่าเราสามารถเป็นอะไรก็ได้ แต่กลับมีเพียงไม่กี่สิ่งเท่านั้นที่สังคมยอมรับว่ามีคุณค่า
+                คนรวยถูกเรียกว่าคนเก่ง คนมีอำนาจถูกเรียกว่าคนฉลาด ส่วนคนที่ไม่มีอะไรเลยกลับถูกถามว่าทำไมถึงไม่พยายามให้มากกว่านี้
+                เราบอกว่าความพยายามไม่เคยทรยศใคร ทั้งที่บางคนพยายามมาทั้งชีวิต แต่สิ่งที่ได้รับกลับมีเพียงความเหนื่อยล้า
+                บางทีโลกอาจไม่ได้สนใจว่าเราพยายามแค่ไหนหรอก มันสนใจเพียงว่าเรามีอะไรมาแสดงให้เห็นบ้าง
+                แล้วถ้าวันหนึ่งไม่มีใครมองเห็นความสำเร็จของเรา เรายังจะต้องการมันอยู่ไหม
+                หรือแท้จริงแล้ว เราไม่ได้กลัวความล้มเหลว แต่กลัวว่าหากไม่มีอะไรให้คนอื่นยอมรับ เราอาจไม่มีคุณค่าอะไรเลย
+            </p>
+        </article>
+
+        <article class="fragment">
+            <small>The Window Seat</small>
+            <h3>อดีตชาติ</h3>
+            <p>
+                วันนี้มีนักเรียนย้ายเข้ามาใหม่ เธอนั่งริมหน้าต่างและถามผมว่าห้องสมุดอยู่ตรงไหน ผมบอกทางไปให้ ทั้งที่รู้สึกเหมือนเคยตอบคำถามนี้มาแล้วหลายครั้ง
+                เมื่อคืนผมฝันถึงบ้านไม้หลังหนึ่ง ฝนตกหนัก และมีเด็กผู้หญิงยืนอยู่หน้าประตู เธอถามว่าพรุ่งนี้ผมจะกลับมาอีกไหม 
+                ผมตอบว่าจะมา แต่เมื่อตื่นขึ้น ผมกลับจำไม่ได้ว่าเธอเป็นใคร ตอนพักกลางวัน ผมเปิดสมุดแล้วพบประโยคที่ตัวเองไม่ได้ตั้งใจเขียน
+                คราวนี้อย่าปล่อยให้เธออยู่คนเดียว
+                ผมขีดฆ่ามันทิ้ง แล้วเงยหน้าขึ้นมองนักเรียนใหม่ เธอกำลังวาดรูปบ้านไม้หลังหนึ่งลงในสมุดของตัวเอง
+                ใต้ภาพนั้นมีข้อความสั้นๆ "คราวนี้ อย่ามาสายอีกนะ"
+                ผมไม่รู้ว่าเธอกำลังพูดถึงอะไร แต่จู่ๆ ผมก็รู้สึกผิดขึ้นมา ทั้งที่วันนี้เป็นครั้งแรกที่เราได้พบกัน
+                พรุ่งนี้ผมคงต้องถามเธอสักหน่อยว่าเราเคยเจอกันที่ไหนมาก่อนหรือเปล่า
+            </p>
+            <p class="afterthought">
+                พรุ่งนี้ผมจะไปหาเธอให้ตรงเวลา
+            </p>
+        </article>
+
+        <article class="fragment">
+            <small>07 — THE UNANSWERED</small>
+            <h3>คำถามที่ไม่มีใครถาม</h3>
+            <p>
+                คุณคิดว่าตัวเองเป็นคนดีหรือเปล่าครับ ถ้าวันหนึ่งไม่มีใครจดจำคุณได้ ไม่มีใครเสียใจเมื่อคุณหายไป 
+                และไม่มีใครสังเกตเห็นด้วยซ้ำว่าคุณเคยอยู่ตรงนี้ คุณคิดว่าชีวิตที่ผ่านมาของคุณยังมีความหมายอยู่ไหม
+                ไม่ต้องรีบตอบก็ได้ครับ ผมเองก็ไม่รู้เหมือนกัน แต่คุณยังอ่านมาถึงตรงนี้ แสดงว่าคุณคงกำลังรออะไรบางอย่างอยู่
+                ผมสงสัยจังว่า ถ้าข้อความทั้งหมดนี้หายไปจากหน้าจอ คุณจะคิดถึงมัน หรือแค่เลื่อนผ่านไปเหมือนไม่เคยเห็นมันมาก่อน
+                บางทีผมอาจเป็นแค่คนแปลกหน้าคนหนึ่งที่คุณจะลืมในอีกไม่กี่นาที
+                แล้วคุณล่ะครับ คุณแน่ใจแค่ไหนว่าตัวเองจะไม่ถูกลืมเหมือนกัน
+            </p>
+        </article>
+
+        <article class="fragment damaged">
+            <small>END OF RECORD</small>
+            <h3>最後の記録</h3>
+            <p>
+                คุณอ่านมาถึงตรงนี้แล้ว
+                แต่มีข้อความหนึ่งที่หายไป
+            </p>
+            <p class="redacted">
+                [ DATA NOT FOUND ]
+            </p>
+            <p class="afterthought">
+                คุณจำได้ไหมว่ามันเขียนว่าอะไร?
+            </p>
+        </article>
+
+    </main>
+
+    <section class="unlisted">
+        <small>UNLISTED MESSAGE — 00:00</small>
+
+        <p>
+            คุณไม่จำเป็นต้องเชื่อทุกอย่างที่อ่านพบ
+            โดยเฉพาะสิ่งที่ดูเหมือนกำลังพูดกับคุณอยู่
+        </p>
+
+        <p>
+            บางทีนี่ก็เป็นแค่เว็บไซต์ธรรมดา
+            ที่มีคนคนหนึ่งเขียนข้อความแปลกๆ ทิ้งเอาไว้
+        </p>
+
+        <p class="last-line">
+            ...?
+        </p>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact</h2>
+
+        <p>Discord : Natsu</p>
+        <p>Youtube : @HarutakaNatsu</p>
+        <p>Twitter : @HarutakaNatsu</p>
+        <p>Twitch : harutaka_natsu</p>
+        <p>
+            Email :
+            <a href="mailto:ttonpai253@gmail.com">
+                ttonpai253@gmail.com
+            </a>
+        </p>
+
+        <p class="small-note">
+            If you found this page, you were meant to find it.
+        </p>
+    </section>
+
+    <div id="sakura-container" aria-hidden="true"></div>
+    <div id="star-container" aria-hidden="true"></div>
+
+    <footer>
+        <p>© 2026 Harutaka Natsu</p>
+        <p>Made with HTML &amp; CSS</p>
+        <p class="end">END OF RECORD</p>
+    </footer>
+
+    <script>
+        /* Falling cherry blossoms */
+
+        const sakuraContainer =
+            document.getElementById("sakura-container");
+
+        for (let i = 0; i < 16; i++) {
+            const sakura = document.createElement("div");
+
+            sakura.className = "sakura";
+            sakura.textContent = "🌸";
+
+            sakura.style.left = Math.random() * 100 + "vw";
+            sakura.style.fontSize =
+                (Math.random() * 9 + 10) + "px";
+
+            sakura.style.animationDuration =
+                (Math.random() * 8 + 9) + "s";
+
+            sakura.style.animationDelay =
+                (Math.random() * 10) + "s";
+
+            sakuraContainer.appendChild(sakura);
+        }
+
+        /* Faint, distant stars */
+
+        const starContainer =
+            document.getElementById("star-container");
+
+        for (let i = 0; i < 32; i++) {
+            const star = document.createElement("div");
+
+            star.className = "star";
+            star.textContent = "✦";
+
+            star.style.left = Math.random() * 100 + "vw";
+            star.style.top = Math.random() * 100 + "vh";
+
+            star.style.fontSize =
+                (Math.random() * 8 + 7) + "px";
+
+            star.style.animationDelay =
+                (Math.random() * 5) + "s";
+
+            starContainer.appendChild(star);
+        }
+    </script>
+
+</body>
+</html>
